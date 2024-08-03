@@ -1,2 +1,3 @@
-#JPMorgan : Software Engineering Internship
-Credit Rewards Convertor
+# JPMorgan : Software Engineering Internship
+**Task 1 :Credit Rewards Convertor**
+
