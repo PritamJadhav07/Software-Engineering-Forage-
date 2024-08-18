@@ -1,30 +1,40 @@
+
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RewardValueTests {
 
     @Test
-    void create_with_cash_value() {
-        double cashValue = 100;
+    public void create_with_cash_value() {
+        //Test the conversion form cash to miles
+        double cashValue = 100.0;
         var rewardValue = new RewardValue(cashValue);
-        assertEquals(cashValue, rewardValue.getCashValue());
+        double expectedMilesValue = cashValue / 0.0035;
+        assertEquals(expectedMilesValue, rewardValue.getMilesValue(), 0.001, "Cash to miles conversion failed");
     }
 
     @Test
-    void create_with_miles_value() {
+    public void create_with_miles_value() {
+        //Tests conversion from miles to cash
         int milesValue = 10000;
         var rewardValue = new RewardValue(milesValue);
-        assertEquals(milesValue, rewardValue.getMilesValue());
+        double expectedCashValue = milesValue * 0.0035;
+        assertEquals(expectedCashValue, rewardValue.getCashValue(), 0.001, "Miles to cash conversion failed");
+    }
+    // Ensure these tests are included in the test suite
+    @Test
+    public void testCashConstructor() {
+        double cashValue = 200.0;
+        var rewardValue = new RewardValue(cashValue);
+        assertEquals(cashValue, rewardValue.getCashValue(), "Cash value is incorrect");
     }
 
     @Test
-    void convert_from_cash_to_miles() {
-        assert false;
-    }
-
-    @Test
-    void convert_from_miles_to_cash() {
-        assert false;
+    public void testMilesConstructor() {
+        int milesValue = 50000;
+        var rewardValue = new RewardValue(milesValue);
+        assertEquals(milesValue, rewardValue.getMilesValue(), "Miles value is incorrect");
     }
 }
+
