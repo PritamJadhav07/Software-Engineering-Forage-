@@ -5,4 +5,4 @@ Created method path :
   <rewards-converter>src>main/java/RewardValue.java
    Used to cash value convert to miles
    
-  *Task 1 Completed**
+  *Task 1 Completed*
